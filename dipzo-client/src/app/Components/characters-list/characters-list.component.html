@@ -1,0 +1,46 @@
+<!-- pagination elements -->
+<hr>
+<div class="offset-md-9">
+  <div class="pagination_section"> 
+      <a (click)="onNewPage(characters.info.prev)"><< Previous</a> 
+      <a class="active"> || </a> 
+      <!--
+      <a href="#" title="DataStructure">2</a> 
+      <a href="#" title="Languages">3</a> 
+      <a href="#" title="Interview" class="active">4</a> 
+      <a href="#" title="practice">5</a> 
+      -->
+      <a (click)="onNewPage(characters.info.next)">Next >></a> 
+  </div> 
+</div>
+<hr>
+<div class="col-md-3" *ngFor="let character of characters.results">
+  <div *ngIf="character != null" class="card text-center">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      {{ character.name }}
+      <button class="btn btn-success" [routerLink]="['/character', character.id]">
+          <i class="fas fa-eye"></i>
+      </button>
+    </div>
+    <img [src]="character.image" class="card-img-top" width="auto" height="200px">
+  </div>
+  <hr>
+</div>
+
+<hr>
+  <!-- pagination elements -->
+  <div class="offset-md-9">
+    <div class="pagination_section"> 
+        <a (click)="onNewPage(characters.info.prev)"><< Previous</a> 
+        <a class="active"> || </a> 
+        <!--
+        <a href="#" title="DataStructure">2</a> 
+        <a href="#" title="Languages">3</a> 
+        <a href="#" title="Interview" class="active">4</a> 
+        <a href="#" title="practice">5</a> 
+        -->
+        <a (click)="onNewPage(characters.info.next)">Next >></a> 
+    </div> 
+  </div>
+  
+<hr>
