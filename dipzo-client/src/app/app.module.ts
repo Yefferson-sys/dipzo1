@@ -11,14 +11,18 @@ import { CharactersListComponent } from './Components/characters-list/characters
 
 import { HttpClientModule } from '@angular/common/http'
 import { CharacterService } from './Services/character.service';
+import { EpisodeService } from './Services/episode.service';
+import { LocationService } from './Services/location.service';
 import { CharacterInfoComponent } from './Components/character-info/character-info.component';
+import { EpisodeInfoComponent } from './Components/episode-info/episode-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     CharactersListComponent,
-    CharacterInfoComponent
+    CharacterInfoComponent,
+    EpisodeInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,9 @@ import { CharacterInfoComponent } from './Components/character-info/character-in
     FormsModule
   ],
   providers: [
-    CharacterService
+    CharacterService,
+    LocationService,
+    EpisodeService
   ],
   bootstrap: [AppComponent]
 })
