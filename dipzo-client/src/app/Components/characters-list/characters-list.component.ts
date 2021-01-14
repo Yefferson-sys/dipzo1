@@ -10,7 +10,7 @@ export class CharactersListComponent implements OnInit {
 
   @HostBinding('class') classes = 'row';
 
-  characters: any;
+  characters: any = {};
   
   constructor( private characterSvc: CharacterService ) { }
 
