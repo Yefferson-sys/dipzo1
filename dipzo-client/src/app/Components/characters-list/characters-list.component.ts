@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { CharacterService } from 'src/app/Services/character.service';
 
 @Component({
   selector: 'app-characters-list',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersListComponent implements OnInit {
 
-  constructor() { }
+  @HostBinding('class') classes = 'row';
+
+  games: any = [];
+  
+  constructor( private characterSvc: CharacterService ) { }
 
   ngOnInit(): void {
+    this.getCharacters();
+  }
+
+  getCharacters() {
+    this.characterSvc.getCharacters().subscribe(
+      (success) => {
+        console.log(success);
+      }, 
+      (error) => {
+
+      }
+    )
   }
 
 }
