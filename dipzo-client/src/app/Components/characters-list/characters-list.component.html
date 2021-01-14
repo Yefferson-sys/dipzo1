@@ -1,5 +1,21 @@
+<!-- pagination elements -->
+<hr>
+<div class="offset-md-9">
+  <div class="pagination_section"> 
+      <a (click)="onNewPage(characters.info.prev)"><< Anterior</a> 
+      <a class="active"> || </a> 
+      <!--
+      <a href="#" title="DataStructure">2</a> 
+      <a href="#" title="Languages">3</a> 
+      <a href="#" title="Interview" class="active">4</a> 
+      <a href="#" title="practice">5</a> 
+      -->
+      <a (click)="onNewPage(characters.info.next)">Siguiente >></a> 
+  </div> 
+</div>
+<hr>
 <div class="col-md-3" *ngFor="let character of characters.results">
-  <div class="card text-center">
+  <div *ngIf="character != null" class="card text-center">
     <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
       {{ character.name }}
       <button class="btn btn-success" [routerLink]="['/character', character.id]">
@@ -10,3 +26,21 @@
   </div>
   <hr>
 </div>
+
+<hr>
+  <!-- pagination elements -->
+  <div class="offset-md-9">
+    <div class="pagination_section"> 
+        <a (click)="onNewPage(characters.info.prev)"><< Anterior</a> 
+        <a class="active"> || </a> 
+        <!--
+        <a href="#" title="DataStructure">2</a> 
+        <a href="#" title="Languages">3</a> 
+        <a href="#" title="Interview" class="active">4</a> 
+        <a href="#" title="practice">5</a> 
+        -->
+        <a (click)="onNewPage(characters.info.next)">Siguiente >></a> 
+    </div> 
+  </div>
+  
+<hr>

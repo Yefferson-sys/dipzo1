@@ -11,7 +11,7 @@ export class CharactersListComponent implements OnInit {
   @HostBinding('class') classes = 'row';
 
   characters: any = {};
-  
+
   constructor( private characterSvc: CharacterService ) { }
 
   ngOnInit(): void {
@@ -20,6 +20,19 @@ export class CharactersListComponent implements OnInit {
 
   getCharacters() {
     this.characterSvc.getCharacters().subscribe(
+      (success) => {
+        this.characters = success;
+      }, 
+      (error) => {
+
+      }
+    )
+  }
+
+  onNewPage(url: string) {
+    if (url == null ) return;
+    const newPage = url.substring(url.indexOf('?page=')+'?page='.length);
+    this.characterSvc.getNewPage( parseInt(newPage)).subscribe(
       (success) => {
         this.characters = success;
       }, 

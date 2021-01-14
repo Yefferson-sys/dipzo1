@@ -16,4 +16,8 @@ export class CharacterService {
   getCharacter( id: number ) {
     return this.http.get(this.API_URL+'/character/'+id);
   }
+
+  getNewPage( page: number ) {
+    return this.http.get(this.API_URL+'/character?page='+page);
+  }
 }
