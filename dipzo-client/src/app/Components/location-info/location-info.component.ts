@@ -1,32 +1,30 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CharacterService } from 'src/app/Services/character.service';
-import { EpisodeService } from 'src/app/Services/episode.service';
+import { LocationService } from 'src/app/Services/location.service';
 
-import { Episode } from '../../Models/episode.model';
+import { Location } from '../../Models/location.model';
 
 @Component({
-  selector: 'app-episode-info',
-  templateUrl: './episode-info.component.html',
-  styleUrls: ['./episode-info.component.scss']
+  selector: 'app-location-info',
+  templateUrl: './location-info.component.html',
+  styleUrls: ['./location-info.component.scss']
 })
-export class EpisodeInfoComponent implements OnInit {
-  @HostBinding('class') classes = 'row'   // -> Indicar que el componente principal tiene la clase row.
-
-  episode: Episode = {};
+export class LocationInfoComponent implements OnInit {
+  location: Location = {};
   characters: any = [];
   constructor(
-    private EpisodeSvc: EpisodeService,
+    private LocationSvc: LocationService,
     private CharacterSvc: CharacterService,
     private activeRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     const {id} = this.activeRoute.snapshot.params;
-    this.EpisodeSvc.getEpisode(id).subscribe(
+    this.LocationSvc.getLocation(id).subscribe(
       success => {
-        this.episode = success;
-        this.episode.characters.forEach((e: string, i: number) => {
+        this.location = success;
+        this.location.residents.forEach((e: string, i: number) => {
           e = e.substring(e.indexOf('/character/')+'/character/'.length);
           this.CharacterSvc.getCharacter(parseInt(e)).subscribe(
             success => {
@@ -43,5 +41,4 @@ export class EpisodeInfoComponent implements OnInit {
       }  
     )
   }
-
 }

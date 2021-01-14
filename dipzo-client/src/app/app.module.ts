@@ -15,6 +15,7 @@ import { EpisodeService } from './Services/episode.service';
 import { LocationService } from './Services/location.service';
 import { CharacterInfoComponent } from './Components/character-info/character-info.component';
 import { EpisodeInfoComponent } from './Components/episode-info/episode-info.component';
+import { LocationInfoComponent } from './Components/location-info/location-info.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EpisodeInfoComponent } from './Components/episode-info/episode-info.com
     NavigationComponent,
     CharactersListComponent,
     CharacterInfoComponent,
-    EpisodeInfoComponent
+    EpisodeInfoComponent,
+    LocationInfoComponent
   ],
   imports: [
     BrowserModule,

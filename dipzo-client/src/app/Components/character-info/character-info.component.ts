@@ -48,7 +48,8 @@ export class CharacterInfoComponent implements OnInit {
   }
 
   onOrigin(url: string) {
-    console.log(url)
+    const id = url.substring(url.indexOf('/location/')+'/location/'.length);
+    this.router.navigate(['location', id])
   }
 
   onChangeSelect() {

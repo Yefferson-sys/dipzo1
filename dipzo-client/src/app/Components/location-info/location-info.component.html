@@ -1,27 +1,27 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-body">
-            <h3 class="text-center">Episode information</h3>
+            <h3 class="text-center">Location information</h3>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="name">Name: </label>
-                    <input type="text" [(ngModel)]="episode.name" placeholder="Name" 
+                    <input type="text" [(ngModel)]="location.name" placeholder="Name" 
                         class="form-control" readonly
                     />
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="air_date">Air date: </label>
-                    <input type="text" [(ngModel)]="episode.air_date" placeholder="Air date" 
+                    <label for="type">Type: </label>
+                    <input type="text" [(ngModel)]="location.type" placeholder="Type" 
                         class="form-control" readonly
                     />
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="episode">Episode: </label>
-                    <input type="text" [(ngModel)]="episode.episode" placeholder="Episode" 
+                    <label for="dimension">Dimension: </label>
+                    <input type="text" [(ngModel)]="location.dimension" placeholder="Dimension" 
                         class="form-control" readonly
                     />
                 </div>
@@ -32,7 +32,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="text-center">Characters in episode</h3>
+                    <h3 class="text-center">Residents in location</h3>
                     <div class="col-md-3" *ngFor="let character of characters">
                         <div class="card text-center">
                           <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
@@ -50,6 +50,3 @@
         </div>
     </div>
 </div>
-
-
-
