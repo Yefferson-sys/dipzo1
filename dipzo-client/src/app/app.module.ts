@@ -11,12 +11,14 @@ import { CharactersListComponent } from './Components/characters-list/characters
 
 import { HttpClientModule } from '@angular/common/http'
 import { CharacterService } from './Services/character.service';
+import { CharacterInfoComponent } from './Components/character-info/character-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    CharactersListComponent
+    CharactersListComponent,
+    CharacterInfoComponent
   ],
   imports: [
     BrowserModule,

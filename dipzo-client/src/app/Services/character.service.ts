@@ -13,7 +13,7 @@ export class CharacterService {
     return this.http.get(this.API_URL+'/character')
   }
 
-  getCharacter() {
-
+  getCharacter( id: number ) {
+    return this.http.get(this.API_URL+'/character/'+id);
   }
 }

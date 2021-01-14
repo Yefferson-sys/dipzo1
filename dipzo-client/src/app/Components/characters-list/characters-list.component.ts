@@ -10,7 +10,7 @@ export class CharactersListComponent implements OnInit {
 
   @HostBinding('class') classes = 'row';
 
-  games: any = [];
+  characters: any;
   
   constructor( private characterSvc: CharacterService ) { }
 
@@ -21,7 +21,7 @@ export class CharactersListComponent implements OnInit {
   getCharacters() {
     this.characterSvc.getCharacters().subscribe(
       (success) => {
-        console.log(success);
+        this.characters = success;
       }, 
       (error) => {
 
